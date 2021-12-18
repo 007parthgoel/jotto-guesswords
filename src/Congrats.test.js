@@ -1,12 +1,11 @@
-import Enzyme, {shallow} from 'Enzyme';
-import EnzymeAdapter from "@wojtekmaj/enzyme-adapter-react-17";
+import React from 'react';
+import {shallow} from 'Enzyme';
 
-import {findBytestAttr,checkProp} from "../test/testUtils";
+import {findBytestAttr,checkProps} from "../test/testUtils";
 import Congrats from './Congrats';
 
-Enzyme.configure({adapter:new EnzymeAdapter});
-
 const defaultProps={success:false};
+
 /**
  * Functional react component for congratulatory message
  * @function
@@ -41,6 +40,6 @@ test('renders non-empty congrats when `success` prop is true',()=>{
 
 test('does not throw warning with expected props',()=>{
     const expectedProps={success:false};
-    const propError=checkProp(Congrats,expectedProps);
+    const propError=checkProps(Congrats,expectedProps);
     expect(propError).toBeUndefined();
 })
