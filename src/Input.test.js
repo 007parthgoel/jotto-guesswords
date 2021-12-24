@@ -13,9 +13,9 @@ const defaultProps={};
  */
 
 
-const setup=(props={})=>{
-  const setupProps={...defaultProps,...props};
-  return shallow(<Input {...setupProps}/>);
+const setup=(secretWord='party')=>{
+  // const setupProps={...defaultProps,...props};
+  return shallow(<Input secretWord={secretWord}/>);
 };
 
 test('render without error',()=>{
@@ -24,3 +24,6 @@ test('render without error',()=>{
     expect(inputComponent.length).toBe(1);
 })
 
+test('does not throw warning with expected props',()=>{
+    checkProps(Input,{secretWord:[]});
+})
