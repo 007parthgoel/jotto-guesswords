@@ -6,7 +6,7 @@ import checkPropTypes from 'check-prop-types';
  * @param {object} props -react props
  * @return {ShalloWrapper}
  */
-export const findBytestAttr=(wrapper,val)=>{
+export const findByTestAttr=(wrapper, val)=>{
     return wrapper.find(`[data-test='${val}']`)
 }
 
